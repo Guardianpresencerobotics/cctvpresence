@@ -2,7 +2,7 @@ import cv2
 import cvui
 import cateyesperseption 
 
-
+##main monitor display out put to tv ##
 
 cam = frame
 cvui.init('screen')
