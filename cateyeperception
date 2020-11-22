@@ -1,0 +1,37 @@
+import opencv as cv2
+
+
+
+cam1cap = cv.VideoCapture("rtsp://192.168.1.2:8080/out.h264") ##cv2.VideoCapture('rtsp://admin:123456@192.168.0.333')##
+
+if (cap.isOpened() == False): 
+print("Unable to read camera feed")
+
+## width= int(cam1cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+height= int(cam1cap.get(cv2.CAP_PROP_FRAME_HEIGHT)) ##
+
+width= int(video.get(cv2.CAP_PROP_FRAME_WIDTH))
+height= int(video.get(cv2.CAP_PROP_FRAME_HEIGHT))
+
+writer= cv2.VideoWriter('basicvideo.mp4', cv2.VideoWriter_fourcc(*'DIVX'), 20, (width,height))
+##out = cv2.VideoWriter('outpy.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 10, (frame_width,frame_height))##
+
+while True:
+    ret,frame= video.read()
+
+    writer.write(frame)
+    ##out.write(frame)##
+    path = 'D:/OpenCV/Scripts/ch1video'
+path = 'D:/OpenCV/Scripts/Images'
+cv2.imwrite(os.path.join(path , 'waka.jpg'), frame)
+
+    cv2.imshow('frame', frame)
+    ##cv2.imshow('Original', frame)##
+    if cv2.waitKey(1) & 0xFF == 27:
+        break
+
+
+video.release()
+writer.release()
+cv2.destroyAllWindows()
+
