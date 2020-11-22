@@ -1,7 +1,7 @@
 import cv2
 import cateye
 import numpy
-
+## motion detection system ##
 cap=frame
 while cap.isOpened():
     diff = cv2.absdiff(frame1, frame2)
