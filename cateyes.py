@@ -1,6 +1,8 @@
 import cv2
 import cvui
 
+## perseption ##
+
 ## rtsp_username = "enter_username"
 rtsp_password = "enter_password"
 width = 800
