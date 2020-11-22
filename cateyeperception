@@ -1,6 +1,20 @@
-import opencv as cv2
+import cv2
+import cvui
 
-
+## rtsp_username = "enter_username"
+rtsp_password = "enter_password"
+width = 800
+height = 480
+cam_no = 1
+def create_camera (channel):
+    rtsp = "rtsp://" + rtsp_username + ":" + rtsp_password + "@192.168.11.110:554/Streaming/channels/" + channel + "02" #change the IP to suit yours
+    cap = cv2.VideoCapture()
+    cap.open(rtsp)
+    cap.set(3, 640)  # ID number for width is 3
+    cap.set(4, 480)  # ID number for height is 480
+    cap.set(10, 100)  # ID number for brightness is 10qq
+    return cap
+cam = create_camera(str(cam_no)) ##
 
 cam1cap = cv.VideoCapture("rtsp://192.168.1.2:8080/out.h264") ##cv2.VideoCapture('rtsp://admin:123456@192.168.0.333')##
 
